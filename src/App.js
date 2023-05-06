@@ -1,6 +1,5 @@
-
-/*import './App.css';*/
-import './app.scss';
+import React from 'react';
+import './App.css';
 
 function App() {
   return (
