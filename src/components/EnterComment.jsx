@@ -4,7 +4,8 @@ function EnterComment({ value, onChange }) {
     return (
         <div>
             <label htmlFor="comment"></label>
-            <textarea placeholder='Введите комментарий...' id="comment" value={value} onChange={onChange}/>
+            <textarea name="comment" placeholder='Введите комментарий...' id="comment" value={value} onChange={onChange}>
+            </textarea>
 
         </div>
     );
