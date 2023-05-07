@@ -90,8 +90,8 @@ function App() {
                 onChange={handleInputChange}
             />
           <div className="form-item inline">
-            <button type="submit">Отправить</button>
-            <button type="reset">Очистить</button>
+            <button className="submit" type="submit">Отправить</button>
+            <button className="clear" type="reset">Очистить</button>
           </div>
         </form>
       </div>
