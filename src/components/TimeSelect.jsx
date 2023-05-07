@@ -55,7 +55,7 @@ function TimeSelect({startValue, endValue, onStartChange, onEndChange}) {
     };
 
     return (
-        <div className="form-item">
+        <div className="form-item inline">
             <label htmlFor="start-time">Время</label>
             <label htmlFor="start-time">с:</label>
             <select
