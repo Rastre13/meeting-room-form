@@ -10,7 +10,7 @@ function DateSelect({ value, onChange }) {
     };
 
     return (
-        <div className="form-item">
+        <div className="form-item inline">
             <label htmlFor="date-select">Выберите дату:</label>
             <input
                 type="date"
