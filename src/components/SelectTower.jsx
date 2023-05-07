@@ -1,5 +1,6 @@
 import React from "react";
-function SelectTower({ value, onChange }) {
+
+function SelectTower({value, onChange}) {
     return (
         <div>
             <label htmlFor="tower">Башня</label>
@@ -19,4 +20,5 @@ function SelectTower({ value, onChange }) {
         </div>
     );
 }
+
 export default SelectTower;

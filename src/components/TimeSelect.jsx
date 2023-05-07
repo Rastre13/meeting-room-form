@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 
-function TimeSelect({ startValue, endValue, onStartChange, onEndChange }) {
+function TimeSelect({startValue, endValue, onStartChange, onEndChange}) {
     const [startOptions, setStartOptions] = useState([]);
     const [endOptions, setEndOptions] = useState([]);
 
