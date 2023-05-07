@@ -89,7 +89,7 @@ function App() {
                 value={formData.comment}
                 onChange={handleInputChange}
             />
-          <div className="form-item">
+          <div className="form-item inline">
             <button type="submit">Отправить</button>
             <button type="reset">Очистить</button>
           </div>
