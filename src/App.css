@@ -87,8 +87,7 @@ h1{
   background: linear-gradient(90deg, #8BE8BB 0%, #3E4FE9 101.59%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  color: transparent;
   margin-top: 5%;
 }
 form{
