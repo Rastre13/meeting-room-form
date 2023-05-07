@@ -138,20 +138,12 @@ select, #date-select{
 option{
   color: #0E1B48;
 }
-.App {
-}
-
-.form {
-}
-
 .form-item {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
-.form__label {
-}
 .inline{
   display: flex;
   flex-direction: row;
@@ -161,7 +153,7 @@ option{
 }
 button{
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 28px;
   text-align: center;
   letter-spacing: 0.1em;
