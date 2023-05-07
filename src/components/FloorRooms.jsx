@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FloorRooms = () => {
+function FloorRooms(){
     const [selectedFloor, setSelectedFloor] = useState(3);
     const [selectedRoom, setSelectedRoom] = useState(1);
 
@@ -38,6 +38,6 @@ const FloorRooms = () => {
             </label>
         </form>
     );
-};
+}
 
 export default FloorRooms;
