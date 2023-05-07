@@ -1,17 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-function FloorRooms(){
+function FloorRooms({ floorValue, roomValue, onFloorChange, onRoomChange }) {
     const [selectedFloor, setSelectedFloor] = useState(3);
     const [selectedRoom, setSelectedRoom] = useState(1);
 
     const handleFloorChange = (e) => {
         setSelectedFloor(e.target.value);
         setSelectedRoom(1);
+        onFloorChange(e.target.value);
     };
 
     const handleRoomChange = (e) => {
         setSelectedRoom(e.target.value);
+        onRoomChange(e.target.value);
     };
+
+    useEffect(() => {
+        setSelectedFloor(parseInt(floorValue));
+        setSelectedRoom(parseInt(roomValue));
+    }, [floorValue, roomValue]);
 
     return (
         <form>
