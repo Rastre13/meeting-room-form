@@ -10,7 +10,7 @@ function DateSelect({ value, onChange }) {
     };
 
     return (
-        <form>
+        <div className="form-item">
             <label htmlFor="date-select">Выберите дату:</label>
             <input
                 type="date"
@@ -21,7 +21,7 @@ function DateSelect({ value, onChange }) {
                 min={new Date().toISOString().split("T")[0]}
                 placeholder="Выберите дату"
             />
-        </form>
+        </div>
     );
 }
 

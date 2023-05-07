@@ -21,7 +21,7 @@ function FloorRooms({ floorValue, roomValue, onFloorChange, onRoomChange }) {
     }, [floorValue, roomValue]);
 
     return (
-        <form>
+        <div className="form-item">
             <label>
                 Выберите этаж:
                 <select value={selectedFloor.toString()} onChange={handleFloorChange}>
@@ -43,7 +43,7 @@ function FloorRooms({ floorValue, roomValue, onFloorChange, onRoomChange }) {
                     ))}
                 </select>
             </label>
-        </form>
+        </div>
     );
 }
 

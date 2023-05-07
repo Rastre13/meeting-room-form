@@ -55,7 +55,7 @@ function TimeSelect({startValue, endValue, onStartChange, onEndChange}) {
     };
 
     return (
-        <form>
+        <div className="form-item">
             <label htmlFor="start-time">Время</label>
             <label htmlFor="start-time">с:</label>
             <select
@@ -76,7 +76,7 @@ function TimeSelect({startValue, endValue, onStartChange, onEndChange}) {
             >
                 {endOptions}
             </select>
-        </form>
+        </div>
     );
 }
 

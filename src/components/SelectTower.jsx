@@ -2,7 +2,7 @@ import React from "react";
 
 function SelectTower({value, onChange}) {
     return (
-        <div>
+        <div className="form-item">
             <label htmlFor="tower">Башня</label>
             <select
                 id="tower"
