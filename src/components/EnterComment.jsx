@@ -1,10 +1,10 @@
 import React from "react";
 
-function EnterComment() {
+function EnterComment({ value, onChange }) {
     return (
         <div>
             <label htmlFor="comment"></label>
-            <textarea placeholder='Введите комментарий...'>
+            <textarea placeholder='Введите комментарий...' id="comment" value={value} onChange={onChange}>
 
             </textarea>
         </div>

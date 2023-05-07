@@ -76,7 +76,8 @@ function App() {
           </div>
           <div className="form-item">
             <DateSelect
-                value={formData.date} onChange={handleDateChange}
+                value={formData.date}
+                onChange={handleDateChange}
             />
           </div>
           <div className="form-item">
