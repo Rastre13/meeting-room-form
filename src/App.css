@@ -106,7 +106,6 @@ label{
   line-height: 21px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin-bottom: 7px;
 }
 input{
   background: rgba(245, 245, 245, 0.9);
@@ -131,6 +130,7 @@ select, #date-select{
   background: rgba(245, 245, 245, 0.9);
   border-radius: 10px;
   color: #4b4655;
+  margin-top: 7px;
 }
 #start-time, #end-time{
   margin: 0 10px;
@@ -177,7 +177,25 @@ button{
 /*responsive*/
 
 @media (max-width: 768px) {
+  body{
+    font-size: 14px;
+  }
   form{
     width: 90vw;
+  }
+  h1{
+    font-size: 27px;
+  }
+  .inline{
+    flex-direction: column;
+  }
+  label{
+    width: 100%;
+  }
+  #start-time, #end-time {
+    width: inherit;
+  }
+  button{
+    margin:5px 0 5px 0;
   }
 }
