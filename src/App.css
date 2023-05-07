@@ -89,23 +89,24 @@ h1{
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  margin-top: 6%;
+  margin-top: 5%;
 }
 form{
   background: rgba(43, 110, 240, 0.29);
   border-radius: 10px;
-  width: 60vw;
-  margin-top: 6%;
+  width: 55vw;
+  margin-top: 5%;
   padding: 20px 47px;
   display: flex;
   flex-direction: column;
 }
 label{
+  width: 45%;
   font-weight: 700;
   line-height: 21px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin-top: 7px;
+  margin-bottom: 7px;
 }
 input{
   background: rgba(245, 245, 245, 0.9);
@@ -123,12 +124,16 @@ textarea{
 .inline select{
   width: 100%;
 }
-select{
+select, #date-select{
   font-weight: 400;
   padding: 15px 20px;
   background: rgba(245, 245, 245, 0.9);
   border-radius: 10px;
   color: #4b4655;
+}
+#start-time, #end-time{
+  margin: 0 10px;
+  width: 40%;
 }
 option{
   color: #0E1B48;
@@ -151,11 +156,8 @@ option{
   display: flex;
   flex-direction: row;
 }
-.space-around{
-  justify-content: space-around;
-}
-#date-select {
-  color: #4b4655;
+.space-between{
+  justify-content: space-between;
 }
 button{
   font-weight: 700;
