@@ -20,7 +20,12 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(JSON.stringify(formData));
+    const data = {
+      ...formData,
+      floor: parseInt(formData.floor),
+      room: parseInt(formData.room),
+    };
+    console.log(JSON.stringify(data));
   };
 
   const handleReset = () => {
