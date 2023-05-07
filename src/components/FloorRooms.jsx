@@ -21,9 +21,9 @@ function FloorRooms({ floorValue, roomValue, onFloorChange, onRoomChange }) {
     }, [floorValue, roomValue]);
 
     return (
-        <div className="form-item inline">
+        <div className="form-item inline space-between">
             <label>
-                Выберите этаж:
+                Этаж:
                 <select value={selectedFloor.toString()} onChange={handleFloorChange}>
                     {Array.from({ length: 25 }, (_, i) => i + 3).map((floor) => (
                         <option key={floor} value={floor}>
@@ -34,7 +34,7 @@ function FloorRooms({ floorValue, roomValue, onFloorChange, onRoomChange }) {
             </label>
             <br />
             <label>
-                Выберите переговорку:
+                Переговорка:
                 <select value={selectedRoom.toString()} onChange={handleRoomChange}>
                     {Array.from({ length: 10 }, (_, i) => i + 1).map((room) => (
                         <option key={room} value={room}>
