@@ -55,27 +55,30 @@ function TimeSelect({startValue, endValue, onStartChange, onEndChange}) {
     };
 
     return (
-        <div className="form-item inline">
+        <div className="form-item">
             <label htmlFor="start-time">Время</label>
-            <label htmlFor="start-time">с:</label>
-            <select
-                id="start-time"
-                name="start-time"
-                defaultValue={startValue}
-                onChange={handleStartChange}
-            >
-                {startOptions}
-            </select>
 
-            <label htmlFor="end-time">до:</label>
-            <select
-                id="end-time"
-                name="end-time"
-                defaultValue={endValue}
-                onChange={handleEndChange}
-            >
-                {endOptions}
-            </select>
+            <div>
+                <label htmlFor="start-time">с:</label>
+                <select
+                    id="start-time"
+                    name="start-time"
+                    defaultValue={startValue}
+                    onChange={handleStartChange}
+                >
+                    {startOptions}
+                </select>
+
+                <label htmlFor="end-time">до:</label>
+                <select
+                    id="end-time"
+                    name="end-time"
+                    defaultValue={endValue}
+                    onChange={handleEndChange}
+                >
+                    {endOptions}
+                </select>
+            </div>
         </div>
     );
 }
