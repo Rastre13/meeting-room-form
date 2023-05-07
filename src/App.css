@@ -96,7 +96,7 @@ form{
   border-radius: 10px;
   width: 60vw;
   margin-top: 6%;
-  padding: 50px 47px;
+  padding: 20px 47px;
   display: flex;
   flex-direction: column;
 }
@@ -112,11 +112,23 @@ input{
   border-radius: 10px;
   padding: 10px;
 }
+textarea{
+  background: rgba(245, 245, 245, 0.9);
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+.inline input{
+  width: 100%;
+}
+.inline select{
+  width: 100%;
+}
 select{
+  font-weight: 400;
   padding: 15px 20px;
   background: rgba(245, 245, 245, 0.9);
   border-radius: 10px;
-  color: #9E9BA7;
+  color: #4b4655;
 }
 option{
   color: #0E1B48;
@@ -143,5 +155,23 @@ option{
   justify-content: space-around;
 }
 #date-select {
-  color: #9E9BA7;
+  color: #4b4655;
+}
+button{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin-right: 30px;
+}
+.submit{
+  background: #3E4FE9;
+}
+.clear{
+  background: rgba(117, 124, 152, 0.49);
 }
