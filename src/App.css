@@ -8,7 +8,8 @@
 *, *:before, *:after {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+  color: rgba(245, 245, 245, 0.9);}
 
 :focus, :active, a:focus, a:active {
   outline: none;
@@ -84,10 +85,33 @@ h1{
   text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  background: linear-gradient(90deg, #8BE8BB 0%, #3E4FE9 101.59%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-top: 6%;
 }
 form{
   background: rgba(43, 110, 240, 0.29);
   border-radius: 10px;
+  width: 60vw;
+  margin-top: 6%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+label{
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+}
+input{
+  background: rgba(245, 245, 245, 0.9);
+  border-radius: 10px;
+  padding: 10px;
 }
 .App {
 }
@@ -96,6 +120,8 @@ form{
 }
 
 .form-item {
+  display: flex;
+  flex-direction: column;
 }
 
 .form__label {
