@@ -9,12 +9,12 @@ import EnterComment from "./components/EnterComment";
 
 function App() {
   const [formData, setFormData] = useState({
-    tower: "",
-    floor: "",
-    room: "",
-    date: "",
-    start: "",
-    end: "",
+    tower: "Выберите башню",
+    floor: "Выберите этаж",
+    room: "Выберите переговорную комнату",
+    date: new Date().toISOString().split("T")[0],
+    start: "начало",
+    end: "конец",
     comment: "",
   });
 
@@ -26,9 +26,11 @@ function App() {
       room: parseInt(formData.room),
     };
     console.log(JSON.stringify(data));
+    alert("Ваша заявка отправлена");
   };
 
-  const handleReset = () => {
+  const handleReset = (e) => {
+      e.preventDefault();
     setFormData({
       tower: "",
       floor: "",
@@ -94,6 +96,9 @@ function App() {
             <button className="clear" type="reset">Очистить</button>
           </div>
         </form>
+          <footer className="footer">
+              <p className="footer__author">© 2023 Lyrismet🍀</p>
+          </footer>
       </div>
   );
 }
