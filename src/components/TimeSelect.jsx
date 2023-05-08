@@ -34,7 +34,6 @@ function TimeSelect({startValue, endValue, onStartChange, onEndChange}) {
                 ':' +
                 timeOption.getMinutes().toString().padStart(2, '0');
 
-            // Добавляем только те значения, которые больше startValue
             if (timeString > startValue) {
                 endTimes.push(
                     <option key={timeString} value={timeString}>
