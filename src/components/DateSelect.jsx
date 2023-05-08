@@ -1,13 +1,15 @@
 import { useState } from "react";
 
+
 function DateSelect({ value, onChange }) {
-    const [selectedDate, setSelectedDate] = useState(value);
+    const [selectedDate, setSelectedDate] = useState(value || "");
 
     const handleChange = (e) => {
         const selectedDate = e.target.value;
         setSelectedDate(selectedDate);
         onChange(selectedDate);
     };
+
 
     return (
         <div className="form-item">
