@@ -39,7 +39,7 @@ function FloorRooms({ floorValue, roomValue, onFloorChange, onRoomChange }) {
             <label>
                 Переговорка:
                 <select value={selectedRoom.toString()} onChange={handleRoomChange}>
-                    <option disabled={!roomValue} value="">
+                    <option disabled={!roomValue} value="" >
                         Выберите переговорную комнату
                     </option>
                     {Array.from({ length: 10 }, (_, i) => i + 1).map((room) => (
