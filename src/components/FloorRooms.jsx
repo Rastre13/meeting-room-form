@@ -25,6 +25,9 @@ function FloorRooms({ floorValue, roomValue, onFloorChange, onRoomChange }) {
             <label>
                 Этаж:
                 <select value={selectedFloor.toString()} onChange={handleFloorChange}>
+                    <option disabled={!floorValue} value="">
+                        Выберите этаж
+                    </option>
                     {Array.from({ length: 25 }, (_, i) => i + 3).map((floor) => (
                         <option key={floor} value={floor}>
                             {floor} этаж
@@ -36,6 +39,9 @@ function FloorRooms({ floorValue, roomValue, onFloorChange, onRoomChange }) {
             <label>
                 Переговорка:
                 <select value={selectedRoom.toString()} onChange={handleRoomChange}>
+                    <option disabled={!roomValue} value="">
+                        Выберите переговорную комнату
+                    </option>
                     {Array.from({ length: 10 }, (_, i) => i + 1).map((room) => (
                         <option key={room} value={room}>
                             Переговорка №{room}
