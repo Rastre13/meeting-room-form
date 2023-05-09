@@ -17,7 +17,7 @@ function TimeSelect({startValue, endValue, onStartChange, onEndChange}) {
         );
         const endTimes = [];
         endTimes.unshift(
-            <option disabled value="" selected={!startValue}>
+            <option disabled value="" selected={!endValue}>
                 конец
             </option>
         );
