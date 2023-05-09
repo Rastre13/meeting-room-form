@@ -26,7 +26,7 @@ function App() {
       room: parseInt(formData.room),
     };
     console.log(JSON.stringify(data));
-    alert("Ваша заявка отправлена");
+    alert("Данные отправлены в консоль");
   };
 
   const handleReset = (e) => {
