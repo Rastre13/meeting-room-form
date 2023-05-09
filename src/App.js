@@ -33,8 +33,8 @@ function App() {
       e.preventDefault();
     setFormData({
       tower: "",
-      floor: "",
-      room: "",
+      floor: "Выберите этаж",
+      room: "Выберите переговорную комнату",
       date: "",
       start: "",
       end: "",
