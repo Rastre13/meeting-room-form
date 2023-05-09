@@ -10,7 +10,17 @@ function TimeSelect({startValue, endValue, onStartChange, onEndChange}) {
         currentTime.setMinutes(roundedMinutes);
 
         const startTimes = [];
+        startTimes.unshift(
+            <option disabled value="" selected={!startValue}>
+                начало
+            </option>
+        );
         const endTimes = [];
+        endTimes.unshift(
+            <option disabled value="" selected={!startValue}>
+                конец
+            </option>
+        );
 
         for (let i = 0; i < 4; i++) {
             const timeOption = new Date(currentTime.getTime() + i * 30 * 60 * 1000);
