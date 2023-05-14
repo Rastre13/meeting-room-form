@@ -21,7 +21,7 @@ function App() {
   });
     const handleGet = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8080/api/meeting-rooms/${id}`)
+        fetch(`http://localhost:8080/api/meeting-rooms/1`)
             .then((response) => response.json())
             .then((data) => setFormData(data))
             .catch((error) => console.error(error));
@@ -139,6 +139,11 @@ function App() {
                 value={formData.comment}
                 onChange={handleInputChange}
             />
+            <div className="form-item">
+            <label htmlFor="label-user-id">ID:</label>
+            <input className="user-id" type="text" placeholder="Введите ID"/>
+            </div>
+
           <div className="form-item inline flex-end">
             <button className="submit" type="submit">Отправить</button>
             <button className="clear" type="reset">Очистить</button>
