@@ -173,6 +173,10 @@ button{
 .get{
   background: #e9713e
 }
+.user-id{
+  margin-top: 7px;
+  color: #031722;
+}
 .flex-end{
   justify-content: flex-end;
 }
