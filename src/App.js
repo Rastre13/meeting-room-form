@@ -19,7 +19,13 @@ function App() {
     end: "конец",
     comment: "",
   });
-
+    const handleGet = (e) => {
+        e.preventDefault();
+        fetch(`http://localhost:8080/api/meeting-rooms/${id}`)
+            .then((response) => response.json())
+            .then((data) => setFormData(data))
+            .catch((error) => console.error(error));
+    };
     // useEffect(() => {
     //     fetch(`http://localhost:8080/api/meeting-rooms/${id}`)
     //         .then((response) => response.json())
@@ -136,7 +142,7 @@ function App() {
           <div className="form-item inline flex-end">
             <button className="submit" type="submit">Отправить</button>
             <button className="clear" type="reset">Очистить</button>
-            <button className="get" type="get">Получить</button>
+            <button className="get" type="get" onClick={handleGet}>Получить</button>
           </div>
         </form>
           <footer className="footer">
