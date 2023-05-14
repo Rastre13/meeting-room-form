@@ -19,6 +19,7 @@ function App() {
     start: "начало",
     end: "конец",
     comment: "",
+      id: ""
   });
     const handleGet = (e) => {
         e.preventDefault();
@@ -54,31 +55,32 @@ function App() {
     //         .catch((error) => console.error(error));
     // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = {
-      ...formData,
-      floor: parseInt(formData.floor),
-      room: parseInt(formData.room),
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = {
+            ...formData,
+            floor: parseInt(formData.floor),
+            room: parseInt(formData.room),
+            id: parseInt(id) // add id to the data object
+        };
+
+        fetch('http://localhost:8080/api/meeting-room-form', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                console.log('Data has been successfully sent to the server!');
+            })
+            .catch(error => {
+                console.error('There was an error sending data to the server:', error);
+            });
+
+        console.log(JSON.stringify(data));
+        alert("Данные отправлены в консоль");
     };
-
-      fetch('http://localhost:8080/api/meeting-room-form', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-      })
-          .then(response => {
-              console.log('Data has been successfully sent to the server!');
-          })
-          .catch(error => {
-              console.error('There was an error sending data to the server:', error);
-          });
-
-    console.log(JSON.stringify(data));
-    alert("Данные отправлены в консоль");
-  };
 
 
   const handleReset = (e) => {
