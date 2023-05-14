@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import TimeSelect from "./components/TimeSelect";
 import DateSelect from "./components/DateSelect";
 import FloorRooms from "./components/FloorRooms";
 import SelectTower from "./components/SelectTower";
 import EnterComment from "./components/EnterComment";
+// import { useParams, useHistory } from "react-router-dom";
+
 
 
 function App() {
+    // const history = useHistory();
+    // const { id } = useParams();
   const [formData, setFormData] = useState({
     tower: "Выберите башню",
     floor: "Выберите этаж",
@@ -18,6 +22,30 @@ function App() {
     comment: "",
   });
 
+    // useEffect(() => {
+    //     fetch(`http://localhost:8080/api/meeting-rooms/${id}`)
+    //         .then((response) => response.json())
+    //         .then((data) => setFormData(data))
+    //         .catch((error) => console.error(error));
+    // }, [id]);
+
+    // const handleEditSubmit = (e) => {
+    //     e.preventDefault();
+    //     const data = {
+    //         ...formData,
+    //         floor: parseInt(formData.floor),
+    //         room: parseInt(formData.room),
+    //     };
+    //
+    //     fetch(`http://localhost:8080/api/meeting-rooms/${id}`)
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             setFormData(data);
+    //             history.push("/meeting-room-form");
+    //         })
+    //         .catch((error) => console.error(error));
+    // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -25,9 +53,25 @@ function App() {
       floor: parseInt(formData.floor),
       room: parseInt(formData.room),
     };
+
+      fetch('http://localhost:8080/api/meeting-room-form', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+      })
+          .then(response => {
+              console.log('Data has been successfully sent to the server!');
+          })
+          .catch(error => {
+              console.error('There was an error sending data to the server:', error);
+          });
+
     console.log(JSON.stringify(data));
     alert("Данные отправлены в консоль");
   };
+
 
   const handleReset = (e) => {
       e.preventDefault();
