@@ -7,16 +7,6 @@ import SelectTower from "./components/SelectTower";
 import EnterComment from "./components/EnterComment";
 // import { useParams, useHistory } from "react-router-dom";
 
-// Nastya was here 2.0
-
-// мяу
-
-
-function cat() {
-    return "Мяу";
-    console.log("мяу");
-}
-
 function App() {
     // const history = useHistory();
     // const { id } = useParams();
