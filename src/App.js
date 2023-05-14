@@ -11,6 +11,9 @@ import EnterComment from "./components/EnterComment";
 
 // мяу
 
+function cat() {
+    return "Мяу";
+}
 function App() {
     // const history = useHistory();
     // const { id } = useParams();
