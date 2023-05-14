@@ -29,16 +29,16 @@ function App() {
             .then((response) => response.json())
             .then((res) => {
                 console.log(res);
-                setFormData({
-                    tower: res.tower,
-                    floor: res.floor,
-                    room: res.room,
-                    date: res.date, // здесь присваиваем значение даты из JSON-объекта
-                    start: res.start,
-                    end: res.end,
-                    comment: res.comment,
-                    id: res.id
-                });
+                // setFormData({
+                //     tower: res.tower,
+                //     floor: res.floor,
+                //     room: res.room,
+                //     date: res.date, // здесь присваиваем значение даты из JSON-объекта
+                //     start: res.start,
+                //     end: res.end,
+                //     comment: res.comment,
+                //     id: res.id
+                // });
                 handleDateChange(res.date);
                 // handleDateChange({target: {name: "date", value: res.date}});
             })
@@ -104,21 +104,22 @@ function App() {
       end: end,
     });
   };
-  // const handleDateChange = (value) => {
-  //   setFormData({
-  //     ...formData,
-  //     date: value,
-  //   });
-  //   console.log(value);
-  //   console.log(formData.date);
-  // };
 
-    const handleDateChange = (value) => {
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            date: value,
-        }));
-    };
+  const handleDateChange = (value) => {
+    setFormData({
+      ...formData,
+      date: value,
+    });
+    console.log(value);
+    console.log(formData.date);
+  };
+
+    // const handleDateChange = (value) => {
+    //     setFormData((prevFormData) => ({
+    //         ...prevFormData,
+    //         date: value,
+    //     }));
+    // };
 
 
 
