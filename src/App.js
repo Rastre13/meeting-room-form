@@ -7,6 +7,8 @@ import SelectTower from "./components/SelectTower";
 import EnterComment from "./components/EnterComment";
 // import { useParams, useHistory } from "react-router-dom";
 
+// Nastya was here
+
 
 
 function App() {
