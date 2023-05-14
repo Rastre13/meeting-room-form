@@ -10,6 +10,7 @@ import EnterComment from "./components/EnterComment";
 function App() {
     // const history = useHistory();
     // const { id } = useParams();
+    const [id, setId] = useState("");
   const [formData, setFormData] = useState({
     tower: "Выберите башню",
     floor: "Выберите этаж",
@@ -21,10 +22,13 @@ function App() {
   });
     const handleGet = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8080/api/meeting-rooms/1`)
+        fetch(`http://localhost:8080/api/meeting-rooms/${id}`)
             .then((response) => response.json())
             .then((data) => setFormData(data))
             .catch((error) => console.error(error));
+    };
+    const handleIdChange = (e) => {
+        setId(e.target.value);
     };
     // useEffect(() => {
     //     fetch(`http://localhost:8080/api/meeting-rooms/${id}`)
@@ -141,7 +145,11 @@ function App() {
             />
             <div className="form-item">
             <label htmlFor="label-user-id">ID:</label>
-            <input className="user-id" type="text" placeholder="Введите ID"/>
+            <input className="user-id"
+                   type="text"
+                   placeholder="Введите ID"
+                   value={id}
+                   onChange={handleIdChange}/>
             </div>
 
           <div className="form-item inline flex-end">
