@@ -5,6 +5,7 @@ import DateSelect from "./components/DateSelect";
 import FloorRooms from "./components/FloorRooms";
 import SelectTower from "./components/SelectTower";
 import EnterComment from "./components/EnterComment";
+import selectTower from "./components/SelectTower";
 // import { useParams, useHistory } from "react-router-dom";
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     tower: "Выберите башню",
     floor: "Выберите этаж",
     room: "Выберите переговорную комнату",
-    date: new Date().toISOString().split("T")[0],
+    // date: new Date().toISOString().split("T")[0],
+    date: "проверка",
     start: "начало",
     end: "конец",
     comment: "",
@@ -23,37 +25,28 @@ function App() {
   });
     const handleGet = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8080/api/meeting-rooms/${id}`)
+        fetch(`http://localhost:8080/api/meeting-room-form/${id}`)
             .then((response) => response.json())
-            .then((data) => setFormData(data))
-            .catch((error) => console.error(error));
+            .then((res) => {
+                console.log(res);
+                setFormData({
+                    tower: res.tower,
+                    floor: res.floor,
+                    room: res.room,
+                    date: res.date, // здесь присваиваем значение даты из JSON-объекта
+                    start: res.start,
+                    end: res.end,
+                    comment: res.comment,
+                    id: res.id
+                });
+                handleDateChange(res.date);
+                // handleDateChange({target: {name: "date", value: res.date}});
+            })
     };
     const handleIdChange = (e) => {
         setId(e.target.value);
     };
-    // useEffect(() => {
-    //     fetch(`http://localhost:8080/api/meeting-rooms/${id}`)
-    //         .then((response) => response.json())
-    //         .then((data) => setFormData(data))
-    //         .catch((error) => console.error(error));
-    // }, [id]);
 
-    // const handleEditSubmit = (e) => {
-    //     e.preventDefault();
-    //     const data = {
-    //         ...formData,
-    //         floor: parseInt(formData.floor),
-    //         room: parseInt(formData.room),
-    //     };
-    //
-    //     fetch(`http://localhost:8080/api/meeting-rooms/${id}`)
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             setFormData(data);
-    //             history.push("/meeting-room-form");
-    //         })
-    //         .catch((error) => console.error(error));
-    // };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -98,7 +91,10 @@ function App() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+        ...formData,
+        [name]: value
+    });
   };
 
   const handleTimeChange = (start, end) => {
@@ -108,12 +104,23 @@ function App() {
       end: end,
     });
   };
-  const handleDateChange = (value) => {
-    setFormData({
-      ...formData,
-      date: value,
-    });
-  };
+  // const handleDateChange = (value) => {
+  //   setFormData({
+  //     ...formData,
+  //     date: value,
+  //   });
+  //   console.log(value);
+  //   console.log(formData.date);
+  // };
+
+    const handleDateChange = (value) => {
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            date: value,
+        }));
+    };
+
+
 
   return (
       <div className="App">
@@ -157,7 +164,7 @@ function App() {
           <div className="form-item inline flex-end">
             <button className="submit" type="submit">Отправить</button>
             <button className="clear" type="reset">Очистить</button>
-            <button className="get" type="get" onClick={handleGet}>Получить</button>
+            <button className="get" onClick={handleGet} type="get">Получить</button>
           </div>
         </form>
           <footer className="footer">
